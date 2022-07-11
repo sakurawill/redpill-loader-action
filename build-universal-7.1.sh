@@ -53,10 +53,10 @@ cd $workpath
 
 
 # download redpill
-#git clone -b develop --depth=1 https://github.com/dogodefi/redpill-lkm.git
-#git clone -b develop --depth=1 https://github.com/dogodefi/redpill-load.git
-git clone -b develop --depth=1 https://github.com/jumkey/redpill-lkm.git
-git clone -b develop --depth=1 https://github.com/jumkey/redpill-load.git
+git clone -b develop --depth=1 https://github.com/dogodefi/redpill-lkm.git
+git clone -b develop --depth=1 https://github.com/dogodefi/redpill-load.git
+#git clone -b develop --depth=1 https://github.com/jumkey/redpill-lkm.git
+#git clone -b develop --depth=1 https://github.com/jumkey/redpill-load.git
 
 # download syno toolkit
 curl --location "https://global.download.synology.com/download/ToolChain/toolkit/7.0/"${arch}"/ds."${arch}"-7.0.dev.txz" --output ds.${arch}-7.0.dev.txz
