@@ -1,13 +1,16 @@
-{
   "extra_cmdline": {
     "vid": "0x46f4",
     "pid": "0x0001",
-    "sn": "17A0PDN123456",
-    "mac1": "001132123456"
+    "sn": "1890PDN228513",
+    "mac1": "00113297FF98"
+    "mac2": "00113297FF99"
   },
   "synoinfo": {
     "supportsystemperature": "no",
-    "supportsystempwarning": "no"
+    "supportsystempwarning": "no",
+    "maxlanport": "2"
   },
-  "ramdisk_copy": {}
+  "extensions": [
+    "thethorgroup.virtio"
+  ]
 }
