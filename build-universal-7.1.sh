@@ -53,8 +53,10 @@ cd $workpath
 
 
 # download redpill
-git clone -b develop --depth=1 https://github.com/dogodefi/redpill-lkm.git
-git clone -b develop --depth=1 https://github.com/dogodefi/redpill-load.git
+#git clone -b develop --depth=1 https://github.com/dogodefi/redpill-lkm.git
+#git clone -b develop --depth=1 https://github.com/dogodefi/redpill-load.git
+git clone -b develop --depth=1 https://github.com/jumkey/redpill-lkm.git
+git clone -b develop --depth=1 https://github.com/jumkey/redpill-load.git
 
 # download syno toolkit
 curl --location "https://global.download.synology.com/download/ToolChain/toolkit/7.0/"${arch}"/ds."${arch}"-7.0.dev.txz" --output ds.${arch}-7.0.dev.txz
@@ -98,13 +100,15 @@ sed -i '0,/"sha256.*/s//"sha256": "'$os_sha256'"/' ./config/${dsmodel}/${build_p
 cat ./config/${dsmodel}/${build_para}/config.json
 
 # 7.1.0 must add this ext
-./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-misc/rpext-index.json  
+./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-misc/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-acpid/rpext-index.json
 # add optional ext
-#./ext-manager.sh add https://raw.githubusercontent.com/dogodefi/mpt3sas/offical/rpext-index.json
-#./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-virtio/rpext-index.json
-#./ext-manager.sh add https://raw.githubusercontent.com/dogodefi/redpill-ext/master/acpid/rpext-index.json
-# ./ext-manager.sh add https://raw.githubusercontent.com/dogodefi/mpt3sas/offical/rpext-index.json
-# ./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-virtio/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/pocopico/redpill-load/jun/redpill-virtio/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/vmxnet3/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/e1000e/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/e1000/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/r8152/rpext-index.json
+./ext-manager.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/r8125/rpext-index.json
 sudo ./build-loader.sh ${dsmodel} '7.1.0-'${os_version}
 mv images/redpill-${dsmodel}*.img ${root}/output/
 cd ${root}
