@@ -1,4 +1,4 @@
-name: Build RedPill DSM loader
+name: Build RedPill DSM loader All
 
 on: 
   workflow_dispatch:
@@ -6,15 +6,15 @@ on:
       dsmodel:
         description: 'Input Full DSM model [DS3622xs+|RS4021xs+|DVA3221|DS918+|DS920+]'
         required: true
-        default: 'DS3622xs+'
+        default: 'DS918+'
       os_version:
         description: 'Must build DSM7.1 and after DSM versions'
         required: true
-        default: '42621'
+        default: '42661'
 #       pat-address:
 #         description: 'Pat file URL'
 #         required: true
-#         default: 'https://global.download.synology.com/download/DSM/release/7.1/42621/DSM_DS3622xs%2B_42621.pat'
+#         default: 'https://global.download.synology.com/download/DSM/release/7.1/42661-1/DSM_DS918%2B_42661.pat'
 jobs:
   redpill:
     runs-on: ubuntu-latest
